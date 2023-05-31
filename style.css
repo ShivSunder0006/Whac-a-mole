@@ -1,0 +1,42 @@
+body{
+    width: auto;
+}
+
+.grid{
+    width: 462px;
+    height: 462px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 3px solid black;
+    margin: 0 453.5px 0 ;
+}
+
+.square{
+    width: 150px;
+    height: 150px;
+    border: 2px solid black ;
+}
+
+.mole{
+    background-image: url(mole.png);
+}
+
+.active{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+  /* height: 200px;
+  border: 3px solid green; */
+   /* margin: 30px 325px 0px; */
+   padding: 30px 50px;
+   border: none;
+   font-weight: 900;
+}
+
+#start {
+    margin: 30px 5px 0px 460px;
+}
+
+#stop{
+    margin-right: 5px;
+}
