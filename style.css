@@ -1,5 +1,8 @@
 body{
     width: auto;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: 'ADLaM Display', cursive;
+    font-family: 'Square Peg', cursive;
 }
 
 .grid{
@@ -8,7 +11,8 @@ body{
     display: flex;
     flex-wrap: wrap;
     border: 3px solid black;
-    margin: 0 453.5px 0 ;
+    margin: 0 453.5px 0;
+    cursor: crosshair;
 }
 
 .square{
@@ -21,6 +25,32 @@ body{
     background-image: url(mole.png);
 }
 
+.det{
+    display: flex;
+    justify-content: center;
+}
+
+.t,.b{
+    margin: 5px;
+    text-align:center;
+    /* padding: 10px; */
+    /* box-shadow: 5px 5px 5px black; */
+    /* size-adjust: auto; */
+    /* filter: drop-shadow(15px 15px 1px rgb(153, 231, 231)); */
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.t,.b{
+    background: linear-gradient(to right, #173a93,
+                    #09cece, #07a47d, #05bc36);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+}
+
+/* .b{
+    padding-left: 20px;
+} */
 .active{
     /* display: flex;
     justify-content: center;
@@ -39,4 +69,22 @@ body{
 
 #stop{
     margin-right: 5px;
+}
+
+button {
+    cursor:pointer;
+    border-radius: 10px;
+    color: aqua;
+    background-color: skyblue;
+    box-shadow: 0 10px rgb(20, 192, 181);
+}
+
+button:hover {
+    background-color: aquamarine;
+}
+
+button:active {
+    background-color: aquamarine;
+    box-shadow: 0 5px rgb(20, 192, 181);
+    transform: translateY(5px);
 }
