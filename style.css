@@ -23,6 +23,7 @@ body{
 
 .mole{
     background-image: url(mole.png);
+    z-index: 1;
 }
 
 .det{
