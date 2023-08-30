@@ -6,13 +6,33 @@ let score = document.querySelector('#score')
 let startGame = document.querySelector('#start')
 let stopGame = document.querySelector('#stop')
 let resetGame = document.querySelector('#reset')
+let getScore = document.querySelector('#prev-score')
+let clearScore = document.querySelector('#clear-score')
+const scoreFromLocalStorage = JSON.parse( localStorage.getItem("myScore") )
 
 let result = 0
 let hitPosition
 let currentTime = 60
 let timerId = null
 let countDownTimerId = null
+let myScore = [10,23,42]
 
+
+function renderScore(score){
+    let listItems = ""
+    for (let i = 0; i < score.length; i++) {
+        listItems += `
+            <li>
+                <a target='_blank' href='${score[i]}'>
+                    ${score[i]}
+                </a>
+            </li>
+        `
+    }
+    ulEl.innerHTML = listItems
+}
+
+// console.log(myScore)
 
 function randomSquare() {
     square.forEach(square =>{
@@ -39,21 +59,9 @@ square.forEach(square => {
 startGame.addEventListener('click' , moveMole)
 
 function moveMole() {
-    timerId = setInterval(randomSquare , 1000)
+    timerId = setInterval(randomSquare , 700)
 }
 
-
-// moveMole()
-
-// function countDown(){
-//     currentTime--
-//     timeLeft.innerHTML = currentTime
-
-//     if(currentTime == 0){
-//         clearInterval(countDownTimerId)
-//         alert("Game Over. Your Final score is " + result)
-//     }
-// }
 
 function countDown() {
     currentTime--
@@ -63,13 +71,13 @@ function countDown() {
       clearInterval(countDownTimerId)
       clearInterval(timerId)
       alert('GAME OVER! Your final score is ' + result)
+        // myScore.push(result)
+        // localStorage.setItem("myScore", JSON.stringify(myScore) )
     }
-   
    }
 
-
 function startTimer(){
-    countDownTimerId = setInterval(countDown ,1000)
+    countDownTimerId = setInterval(countDown ,700)
 } 
 
 startGame.addEventListener('click' , startTimer)
@@ -92,3 +100,16 @@ resetGame.addEventListener('click' , ()=>{
         square.classList.remove('mole')
     })
 }) 
+
+// getScore.addEventListener('click', ()=>{
+//     if(scoreFromLocalStorage){
+//         myScore = scoreFromLocalStorage
+//         renderScore(myScore)
+//     }
+// })
+
+// clearScore.addEventListener('click', ()=>{
+//     localStorage.clear()
+//     myScore = []
+//     renderScore(myScore)
+// })
